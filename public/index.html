@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="todoApp">
+<head>
+	<title>Todo App Sample</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script><!-- load angular -->
+    <script src="js/controllers/main.js"></script>
+    <script src="js/services/todos.js"></script>
+    <script src="core.js"></script>
+</head>
+<body ng-controller="mainController">
+	<div class="container">
+		<h1>TODOs to complete {{todos.length}}</h1>
+
+		<div ng-repeat="todo in todos" class="checkbox">
+			<label>
+				<input type="checkbox" ng-click="deleteTodo(todo._id)">{{todo.text}}</input>
+			</label>
+		</div>
+
+		<div id="todo-form">
+			<form>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="formData.text"></input>
+				</div>
+				<p>New item : {{formData.text}}</p>
+				<button type="submit" class="btn btn-primary" ng-disabled="!formData.text.length" ng-click="createTodo()">Add to TODOs</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

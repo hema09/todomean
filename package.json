@@ -1,0 +1,14 @@
+{
+  "name": "node-todo",
+  "version": "0.0.0",
+  "description": "sample todo app with mean stack",
+  "author": "hemab",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "express": "~4.7.2",
+    "method-override": "~2.1.2",
+    "mongoose": "~4.3.6",
+    "morgan": "~1.2.2"
+  }
+}
